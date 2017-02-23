@@ -56,6 +56,7 @@ namespace HashCode
                 }
                 m += reqVideo;
             }
+            m = m / Program.videos.Count;
             m = m / Program.EP.Count;
             return m;
 

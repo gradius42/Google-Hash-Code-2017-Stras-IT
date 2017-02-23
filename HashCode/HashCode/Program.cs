@@ -27,7 +27,24 @@ namespace HashCode
                 {
                     if(ep.video[i] > moyenne)
                     {
-
+                         
+                        int inter = 9999;
+                        int pos = -1;
+                        int j = 0;
+                        List<int> dejaTest = new List<int>();
+                        do
+                        {
+                            pos = -1;
+                            for (; j < ep.latCache.Length; j++)
+                            {
+                                if (ep.latCache[j] < inter && ep.latCache[j] != 0 && !dejaTest.Contains(j))
+                                {
+                                    pos = j;
+                                    inter = ep.latCache[j];
+                                    dejaTest.Add(j);
+                                }
+                            }
+                        } while (!caches[pos].ajouteVideo(i) && pos != -1);
                     }
                 }
             }
