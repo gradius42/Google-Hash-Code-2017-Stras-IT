@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 namespace HashCode
 {
 
-
     class Cache
     {
         public static int nbCache;
+        public static int nbUsed = 0;
+
         public int id;
+        public bool used;
         public static int capaciteMax;
         public int stockageActuel = 0;
         public List<int> lVideo = new List<int>();
@@ -22,15 +24,46 @@ namespace HashCode
             capaciteMax = cap;
         }
 
-        public void ajouteVideo(int num)
+        public bool ajouteVideo(int num)
         {
-            if (!lVideo.Contains(num))
+            if (!lVideo.Contains(num) && capaciteMax >= stockageActuel + Program.videos[num].taille)
+            {
                 lVideo.Add(num);
+                stockageActuel += Program.videos[num].taille;
+
+                if (!used)
+                {
+                    used = true;
+                    nbUsed++;
+                }
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
-        public void supprimeVideo(int num)
+        public bool supprimeVideo(int num)
         {
-            lVideo.Remove(num);
+            if (lVideo.Contains(num))
+            {
+                lVideo.Remove(num);
+                stockageActuel -= Program.videos[num].taille;
+
+                if(stockageActuel == 0)
+                {
+                    nbUsed--;
+                    used = false;
+                }
+
+                return true;
+            }
+
+            return false;
+            
         }
     }
 }
