@@ -14,7 +14,7 @@ namespace HashCode
         public int id;
         public static int capaciteMax;
         public int stockageActuel = 0;
-        public List<Video> lVideo = new List<Video>();
+        public List<int> lVideo = new List<int>();
 
         public Cache(int i, int cap)
         {
@@ -24,7 +24,13 @@ namespace HashCode
 
         public void ajouteVideo(int num)
         {
+            if (!lVideo.Contains(num))
+                lVideo.Add(num);
+        }
 
+        public void supprimeVideo(int num)
+        {
+            lVideo.Remove(num);
         }
     }
 }
