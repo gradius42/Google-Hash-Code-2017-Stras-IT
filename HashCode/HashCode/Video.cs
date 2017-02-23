@@ -13,7 +13,7 @@ namespace HashCode
         public int number;
         public int taille; // Mb
 
-        Video(int t) {
+        public Video(int t) {
             number = nbVideo++;
             taille = t;
         }
