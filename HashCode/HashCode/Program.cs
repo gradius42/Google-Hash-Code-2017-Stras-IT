@@ -14,6 +14,12 @@ namespace HashCode
         
         static void Main(string[] args)
         {
+            // Lancement de la fonction qui lis le fichier
+
+            // Tri de la liste EP
+            endPoint.listEndPointPriorise();
+            EP = EP.OrderBy(e => e.priorite).ToList();
+            int moyenne = endPoint.calculMoyenne();
         }
     }
 }
