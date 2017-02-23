@@ -20,6 +20,17 @@ namespace HashCode
             endPoint.listEndPointPriorise();
             EP = EP.OrderBy(e => e.priorite).ToList();
             int moyenne = endPoint.calculMoyenne();
+
+            foreach(endPoint ep in EP)
+            {
+                for(int i = 0; i<ep.video.Length; i++)
+                {
+                    if(ep.video[i] > moyenne)
+                    {
+
+                    }
+                }
+            }
         }
     }
 }
