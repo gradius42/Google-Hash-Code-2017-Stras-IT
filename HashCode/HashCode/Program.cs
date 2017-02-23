@@ -11,7 +11,8 @@ namespace HashCode
         static List<Video> videos = new List<Video>();
         static List<endPoint> EP = new List<endPoint>();
         static List<Cache> caches = new List<Cache>();
-
+        static Dictionary<endPoint,int> PriorityIndice = new Dictionary<endPoint,int>(); 
+        
         static void Main(string[] args)
         {
         }
