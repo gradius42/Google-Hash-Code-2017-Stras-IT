@@ -31,9 +31,10 @@ namespace HashCode
 
         public static void listEndPointPriorise()
         {
-            foreach(endPoint e in Program.EP){
+            foreach (endPoint e in Program.EP)
+            {
                 int reqVideo = 0;
-                for(int i = 0; i < e.video.Length; i++)
+                for (int i = 0; i < e.video.Length; i++)
                 {
                     reqVideo += e.video[i];
                 }
@@ -56,4 +57,5 @@ namespace HashCode
             m = m / Program.EP.Count;
             return m;
         }
+    }
 }
