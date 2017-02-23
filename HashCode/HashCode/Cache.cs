@@ -13,7 +13,7 @@ namespace HashCode
         public static int nbUsed = 0;
 
         public int id;
-        public bool used;
+        public bool used = false;
         public static int capaciteMax;
         public int stockageActuel = 0;
         public List<int> lVideo = new List<int>();
@@ -65,5 +65,6 @@ namespace HashCode
             return false;
             
         }
+
     }
 }
