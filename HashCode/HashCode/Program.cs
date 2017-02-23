@@ -8,9 +8,9 @@ namespace HashCode
 {
     class Program
     {
-        static List<Video> videos = new List<Video>();
-        static List<endPoint> EP = new List<endPoint>();
-        static List<Cache> caches = new List<Cache>();
+        public static List<Video> videos = new List<Video>();
+        public static List<endPoint> EP = new List<endPoint>();
+        public static List<Cache> caches = new List<Cache>();
         
         static void Main(string[] args)
         {
