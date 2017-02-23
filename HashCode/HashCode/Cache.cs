@@ -10,12 +10,19 @@ namespace HashCode
 
     class Cache
     {
+        public static int nbCache;
         public int id;
-        static int capaciteMax;
+        public static int capaciteMax;
         public int stockageActuel = 0;
-        public List<Video> lVideo;
+        public List<Video> lVideo = new List<Video>();
 
-        public Cache(int id)
+        public Cache(int i, int cap)
+        {
+            id = i;
+            capaciteMax = cap;
+        }
+
+        public void ajouteVideo(int num)
         {
 
         }
