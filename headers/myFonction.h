@@ -1,0 +1,1 @@
+int* formatInputData(char* s);
