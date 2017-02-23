@@ -38,8 +38,22 @@ namespace HashCode
                     reqVideo += e.video[i];
                 }
                 e.priorite = e.latDC * reqVideo;
-
             }
         }
-    }
+
+        public static int calculMoyenne()
+        {
+            int m = 0;
+            foreach (endPoint e in Program.EP)
+            {
+                int reqVideo = 0;
+                for (int i = 0; i < e.video.Length; i++)
+                {
+                    reqVideo += e.video[i];
+                }
+                m += reqVideo;
+            }
+            m = m / Program.EP.Count;
+            return m;
+        }
 }
